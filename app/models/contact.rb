@@ -12,7 +12,7 @@ class Contact < ActiveRecord::Base
         contact_shares ON contacts.id = contact_shares.contact_id
     SQL
     where_cond = <<-SQL
-      ((contact.user_id = :user_id) OR (contact_share.user_id = :user_id))
+      ((contacts.user_id = :user_id) OR (contact_shares.user_id = :user_id))
     SQL
 
     Contact
